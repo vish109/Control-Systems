@@ -1,0 +1,118 @@
+
+\documentclass{beamer}
+ \usepackage{pgf}
+\mode<presentation> {
+
+\usetheme{Madrid}
+%\usetheme{Malmoe}
+%\usetheme{Marburg}
+%\usetheme{Montpellier}
+%\usetheme{PaloAlto}
+%\usetheme{Pittsburgh}
+%\usetheme{Rochester}
+%\usetheme{Singapore}
+%\usetheme{Szeged}
+%\usetheme{Warsaw}
+
+% As well as themes, the Beamer class has a number of color themes
+% for any slide theme. Uncomment each of these in turn to see how it
+% changes the colors of your current slide theme.
+
+%\usecolortheme{albatross}
+%\usecolortheme{beaver}
+%\usecolortheme{beetle}
+%\usecolortheme{crane}
+%\usecolortheme{dolphin}
+%\usecolortheme{dove}
+%\usecolortheme{fly}
+%\usecolortheme{lily}
+%\usecolortheme{orchid}
+%\usecolortheme{rose}
+%\usecolortheme{seagull}
+%\usecolortheme{seahorse}
+%\usecolortheme{whale}
+%\usecolortheme{wolverine}
+
+%\setbeamertemplate{footline} % To remove the footer line in all slides uncomment this line
+%\setbeamertemplate{footline}[page number] % To replace the footer line in all slides with a simple slide count uncomment this line
+
+%\setbeamertemplate{navigation symbols}{} % To remove the navigation symbols from the bottom of all slides uncomment this line
+}
+
+\usepackage{graphicx} % Allows including images
+\usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\title[Assignment-1]{Control Systems (Assignment - 1)} % The short title appears at the bottom of every slide, the full title is only on the title page
+
+\author{Vishnu Nagar} % Your name
+\institute[IIT Hyderabad] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
+{
+
+\medskip
+\textit{ME18BTECH11053} % Your email address
+}
+
+
+\begin{document}
+
+\begin{frame}
+\titlepage % Print the title page as the first slide
+\end{frame}
+
+\begin{frame}
+\frametitle{Chapter-2, Problem-66}
+The Gompertz growth model is commonly used to model tumor cell growth. The volume of tumor  is given by equation - $$\frac{dv(t)}{dt} = \lambda e^{-\alpha t}v(t)$$
+where $\lambda$ and $\alpha$ are two appropriat e constants.
+\end{frame}
+
+\begin{frame}
+\frametitle{Solution a)}
+if we integrate the given equation - 
+$$	\int_{v_0}^{v(t)} \frac{dv}{v} dv = \int_0^t \lambda e^{-\alpha t} dt $$
+Upon integrating
+$$ln(\frac{v(t)}{v_0}) = \frac{\lambda}{\alpha}(e^{-\alpha t} - 1)$$
+or
+$$ v(t) = v_0\exp[\frac{\lambda}{\alpha}(1 - e^{-\alpha t})]$$
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Solution b)}
+b)\\
+in part a, we derived expression for v(t),
+ $$ v(t) = v_0\exp[\frac{\lambda}{\alpha}(1 - e^{-\alpha t})]$$
+we can see that, as t $\rightarrow \infty $
+		$$ v = v_0e^{\frac{\lambda}{\alpha}}$$
+\end{frame}
+\begin{frame}
+\frametitle{Solution c)}
+c)\\
+For a specific mouse Tumor\\
+$ \lambda $= 2.5 days,\\
+$\alpha$ = 0.1 days \\
+with $ v_0  = 50 \times 10^{-3} mm^3 $\\
+Substituting these values into expression of v(t) from part a,
+	$$v(t) = 50 \times 10^{-3}\exp[25 \times (1 - e^{-0.1t})]  mm^3$$
+\end{frame}
+\begin{frame}
+\frametitle{Volume of Tumor v/s Time Plot}
+\begin{figure}[H]
+\centering
+\input{Figure_1.pgf}
+\caption[Optional caption]{Volume of tumor v/s Time}
+\end{figure}
+\end{frame}
+\begin{frame}
+\frametitle{Solution d)}
+d)\\
+for $\lambda $= 2.5 days and $\alpha$ = 0.1 days \\
+ $$v = 50 \times 10^{-3}e^{\frac{2.5}{0.1}} \approx 3.6 \times 10^{9} mm^3$$
+ as $t \rightarrow \infty $\\
+In the plot also, we can see that as t is sufficiently large (around 100 days), v(t) is approching the same value as we have calculated here.
+\end{frame}
+%------------------------------------------------
+\end{document} 
